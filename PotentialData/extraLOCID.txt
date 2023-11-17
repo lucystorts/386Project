@@ -1,0 +1,57 @@
+Airport,LOCID
+Dallas/Fort Worth International,DFW
+John F. Kennedy International,JFK
+Harry Reid International,LAS
+Charlotte Douglas International,CLT
+Seattle/Tacoma International,SEA
+Logan International,BOS
+Fort Lauderdale-Hollywood International,FLL
+Minneapolis-St Paul International,MSP
+LaGuardia,LGA
+Detroit Metro Wayne County,DTW
+Austin - Bergstrom International,AUS
+Norman Y. Mineta San Jose International,SJC
+Metro Oakland International,OAK
+Kahului Airport,OGG
+Boise Air Terminal,BOI
+Louisville Muhammad Ali International,SDF
+Lihue Airport,LIH
+Gerald R. Ford International,GRR
+Long Beach Airport,LGB
+Rhode Island Tf Green International,PVD
+St Pete Clearwater International,PIE
+Frederick Douglass Grtr Rochester International,ROC
+Greenville-Spartanburg International,GSP
+Eglin AFB Destin Fort Walton Beach,VPS
+Bill and Hillary Clinton Nat Adams Field,LIT
+Phoenix - Mesa Gateway,AZA
+Punta Gorda Airport,PGD
+Northwest Arkansas National,XNA
+Manchester Boston Regional,MHT
+Midland International Air and Space Port,MAF
+Jackson Medgar Wiley Evers International,JAN
+James M Cox/Dayton International,DAY
+Rogue Valley International - Medford,MFR
+Missoula Montana,MSO
+Tri Cities,PSC
+Tweed New Haven,HVN
+Baton Rouge Metropolitan/Ryan Field,BTR
+Charles M. Schulz - Sonoma County,STS
+Aspen Pitkin County Sardy Field,ASE
+Roanoke Blacksburg Regional,ROA
+Green Bay Austin Straubel International,GRB
+General Downing - Peoria International,PIA
+Quad Cities International,MLI
+Snohomish County,PAA
+Charlottesville Albemarle,CHO
+Lafayette Regional Paul Fournet Field,LFT
+Melbourne Orlando International,MLB
+Tri Cities,TRI
+Wilkes Barre Scranton International,AVP
+Durango La Plata County,DRO
+Central Il Regional Airport at Bloomington,BMI
+West Virginia International Yeager,CRW
+Scott AFB MidAmerica St Louis,BLV
+Montgomery Regional,MGM
+New York Stewart International,SWF
+Bethel Airport,BET
