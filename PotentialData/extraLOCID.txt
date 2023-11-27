@@ -42,7 +42,7 @@ Roanoke Blacksburg Regional,ROA
 Green Bay Austin Straubel International,GRB
 General Downing - Peoria International,PIA
 Quad Cities International,MLI
-Snohomish County,PAA
+Snohomish County,PAE
 Charlottesville Albemarle,CHO
 Lafayette Regional Paul Fournet Field,LFT
 Melbourne Orlando International,MLB
