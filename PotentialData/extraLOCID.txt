@@ -46,7 +46,8 @@ Snohomish County,PAE
 Charlottesville Albemarle,CHO
 Lafayette Regional Paul Fournet Field,LFT
 Melbourne Orlando International,MLB
-Tri Cities,TRI
+Tri Cities WA,TRI
+Tri Cities TN,PSC
 Wilkes Barre Scranton International,AVP
 Durango La Plata County,DRO
 Central Il Regional Airport at Bloomington,BMI
