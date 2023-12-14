@@ -5,9 +5,9 @@ import numpy as np
 import plotly.express as px
 import statsmodels.api as sm
 
-st.set_page_config(page_title="Lab10")
+st.set_page_config(page_title="projectEDA")
 
-st.write("# Lab 10")
+st.write("# Project: Airport EDA")
 
 st.markdown(
     """
@@ -21,6 +21,8 @@ st.markdown(
     """)
 
 airports = pd.read_csv('2022Airports.csv')
+
+airports.loc[airports['Airport'] == 'Luis Munoz Marin International Airport', 'State'] = 'US Territory'
 
 st.write("# Dataset")
 st.dataframe(airports) 
@@ -54,21 +56,17 @@ st.markdown(
 
 #  filters
 st.write("### Scatterplot Filters")
-selected_rank = st.slider("Select Rank Range", min_value=1, max_value=200, value=(1, 200))
 selected_variable = st.selectbox("Select Variable for X-axis", ['Elevation', '2022 Enplaned Passengers'])
 
-# Apply filters to the dataframe
-filtered_airports = airports[(airports['2022 Rank'] >= selected_rank[0]) & (airports['2022 Rank'] <= selected_rank[1])]
-
-fig = px.scatter(filtered_airports, x=selected_variable, y='Delays',
+fig = px.scatter(airports, x=selected_variable, y='Delays',
                  hover_data={'Airport': True, 'IATA': True, '2022 Rank': True, selected_variable: True, 'Delays': True},
                  color_discrete_sequence=['#4b7b9b'])
 
 # Add trendline using statsmodels
-X = sm.add_constant(filtered_airports[selected_variable])
-y = filtered_airports['Delays']
+X = sm.add_constant(airports[selected_variable])
+y = airports['Delays']
 model = sm.OLS(y, X).fit()
-line = pd.DataFrame({selected_variable: [filtered_airports[selected_variable].min(), filtered_airports[selected_variable].max()]})
+line = pd.DataFrame({selected_variable: [airports[selected_variable].min(), airports[selected_variable].max()]})
 line['Delays'] = model.predict(sm.add_constant(line[selected_variable]))
 
 fig.add_scatter(x=line[selected_variable], y=line['Delays'], mode='lines', name='Regression Line', line=dict(color='#00204e', width=2))
@@ -83,12 +81,9 @@ fig.update_layout(title=f'Top 200 Airports 2022: Delays vs. {selected_variable} 
 
 st.plotly_chart(fig)
 
-st.write("### Summary Statistics")
-st.write(filtered_airports[[selected_variable, 'Delays']].describe())
-
 # Get regression results
-X = sm.add_constant(filtered_airports[selected_variable])
-y = filtered_airports['Delays']
+X = sm.add_constant(airports[selected_variable])
+y = airports['Delays']
 model = sm.OLS(y, X).fit()
 
 # Display regression results
@@ -98,19 +93,24 @@ st.write(model.summary())
 st.write('### Barchart Analysis')
 st.write('Now, I want to compare *Avg. Delay (Mins)* by *State* in a bar chart sorted from greatest to least average delay.')
 
+
 stateAvgDelays = airports.groupby('State')['Delays'].mean().reset_index()
 stateAvgDelays = stateAvgDelays.sort_values(by='Delays', ascending=True)
 
-px.bar(stateAvgDelays, x='Delays', y='State',color_discrete_sequence=['#4b7b9b',],height=900,
+bars = px.bar(stateAvgDelays, x='Delays', y='State',color_discrete_sequence=['#4b7b9b',],height=900,
                 width=700,
                 title='Top 200 Airports 2022: Average Delays by State')
 
+st.plotly_chart(bars)
+
+
 #  filters
 st.write("### Barchart Filters")
-selected_state = st.selectbox("Select State",[airports['State'].unique()])
+
+selected_state = st.selectbox("Select State", airports['State'].unique())
 
 # Apply filters to the dataframe
-filtered_airports = airports[(airports['State'] == selected_state[0])]
+filtered_airports = airports[(airports['State'] == selected_state)]
 
 fig = px.bar(filtered_airports, x='Delays', y='Airport',color_discrete_sequence=['#4b7b9b',],height=450,
                 width=800,
@@ -119,3 +119,19 @@ fig = px.bar(filtered_airports, x='Delays', y='Airport',color_discrete_sequence=
 st.plotly_chart(fig)
 
 
+st.dataframe(filtered_airports)
+
+
+st.write("# Analysis")
+st.markdown(
+    """ 
+    In the regression analysis, there is a stronger relationship between 2022 Enplaned Passengers and Delays than Elevation.   
+    However, the R-squared value between Enplaned Passengers and Delays is only **0.085**, which indicated a weak relationship. 
+
+    The R-squared value between Elevation and Delays is only **0.006**, which indicated almost no relationship. 
+
+    The barchart allows us to see the average delay by state. The states with the lowest average delay include Hawaii, Alaska, and Idaho.
+    Using the drop down menu, we can investigate the yearly delays for each airport in the chosen state.  
+
+
+    """)
