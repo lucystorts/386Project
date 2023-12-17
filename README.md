@@ -5,7 +5,7 @@ Stat 386 - Dr. Tass - BYU
 12/14/2023    
 
 ## Introduction
-At the onset of the COVID pandemic in 2020, many opted to stop traveling and there was a noticeable decline in airport travel. By 2022, airports seemed to be back to pre-pandemic business. I want to investigate 2022 statistics for the most popular airports in the United States.  
+As an out-of-state college student, I have spent a lot of time in airports and  a lot of time flying back and forth across the country. I grew up in Ohio and the fastest way for me to visit my family is by plane. I want to investigate 2022 statistics for the most popular airports in the United States.  
 
 I created an extensive table for the top 200 ranked airports in the United States. Data for this ranked list was sourced from the Bureau of Transportation Statistics*1*. 
 
