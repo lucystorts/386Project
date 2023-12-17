@@ -21,13 +21,15 @@ Used to clean and organize the data.
 - I exported my dataframe to 2022Airports.csv. 
 
 ### EDA.ipynb
-I performed a simple exploratory data analysis so that I could create a streamlit app and include interactive features. I chose to exlpore the relationship bewteen *2022 Delays* proportion and *Elevation* metric using scatterplot and possibly regression. 
+I performed a simple exploratory data analysis so that I could create a streamlit app and include interactive features. I want to exlpore the relationship bewteen *2022 Delays* proportion and 
+other quantitative variables using a scatterplot. Then, I will to perform a regression 
+analysis for the Q → Q scatterplots. After, I will use a barchart to analyze Average Delay on a State level. I included a filter for State so that we can investigate the individual airport Average Delays per state. 
 
-Then, I want to compare **all airports** by their *Avg. Delay (Mins)* in a bar chart, organized by descending order, not rank.  ???? IDK ABOUT THIS 
+### ProjectEDA.py
+This file contains the code necessary to create my streamlit app that I used for the exploratory data analysis. 
+The *requirements.txt* file includes the libraries needed for the streamlit app. 
 
-I used plotly.express to create a scatterplot with hover data. 
-
-https://airportprojecteda.streamlit.app/
+[Streamlit EDA](https://airportprojecteda.streamlit.app/)
 
 ### Potential Data Folder 
 This folder holds all the downloaded data I used to create my data set. References for where the data was found is below. Also, when I created DataCleaning.ipynb, I included notes and documentation for each of the sources I was using. *Note: I did not use all the files.*
